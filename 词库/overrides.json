@@ -1,0 +1,14 @@
+[
+  {"contexts": ["HomePageClass", "HomePage"], "source": "New Flowchart", "translation": "新建流程图"},
+  {"contexts": ["HomePageClass", "HomePage"], "source": "What's New", "translation": "新增内容"},
+  {"contexts": ["HomePageClass", "HomePage"], "source": "Schematic and PCB (Basic)", "translation": "原理图和 PCB（基础版）"},
+  {"contexts": ["HomePageClass", "HomePage"], "source": "Schematic and PCB (Advanced)", "translation": "原理图和 PCB（高级版）"},
+  {"contexts": ["HomePageClass", "HomePage"], "source": "Open Project", "translation": "打开工程"},
+  {"contexts": ["HomePageClass", "HomePage"], "source": "New Project", "translation": "新建工程"},
+  {"contexts": ["HomePage", "HomePageClass"], "source": "Open Sample", "translation": "打开示例工程"},
+  {"contexts": ["HomePage", "HomePageClass"], "source": "Recent Projects", "translation": "最近打开的工程"},
+  {"contexts": ["HomePage", "HomePageClass"], "source": "Getting Started", "translation": "使用教程"},
+  {"contexts": ["HomePage", "HomePageClass"], "source": "Start", "translation": "开始设计"},
+  {"contexts": ["HomePage", "HomePageClass"], "source": "Help", "translation": "帮助中心"},
+  {"contexts": ["HomePage", "HomePageClass"], "source": "News", "translation": "最新消息"}
+]
