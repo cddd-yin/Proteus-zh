@@ -1,4 +1,4 @@
-# Proteus 汉化（proteus-hanhua）
+# Proteus 汉化（Proteus-zh）
 
 高质量、可维护的 **Proteus 界面汉化语言包**与**纯 Python 工具链**。
 基于 Proteus 官方多语言（Qt 语言包）机制实现：只投放翻译文件，**不改动任何程序二进制**，可一键还原。
