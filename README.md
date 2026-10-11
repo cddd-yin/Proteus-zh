@@ -5,34 +5,86 @@
 
 ![主页](截图/03-本汉化包-主页.png)
 
+---
+
+## 怎么装？（新手照做即可）
+
+> 全程只需三步，**不用装 Python、不用改软件**。装完重启 Proteus 就是中文。
+
+### 第 1 步：把这个仓库下载到电脑
+
+在页面右上角点绿色的 **`Code`** 按钮 → 选 **`Download ZIP`** → 下载后**解压**到任意文件夹（例如桌面）。
+解压后应能看到 `一键安装汉化.bat`、`工具`、`成品` 等文件。
+
+> 提示：如果不会解压，右键压缩包 → 用系统自带的「全部解压缩」即可。
+
+### 第 2 步：双击 `一键安装汉化.bat`
+
+- 会弹出「是否允许此应用对你的设备进行更改？」→ 点 **是**（写入安装目录需要管理员权限，脚本会自动请求）。
+- 脚本会自动找到 Proteus 安装目录并安装汉化包，看到 `[√] 汉化已安装` 即成功。
+- 若自动找不到 Proteus 目录，脚本会提示你**把 Proteus 安装目录路径粘贴进去**（一般形如
+  `C:\Program Files (x86)\Labcenter Electronics\Proteus 8 Professional`）。
+
+### 第 3 步：重启 Proteus
+
+关闭 Proteus 再打开，界面即为中文。
+
+> **想还原英文**：双击 `一键还原英文.bat`，重启 Proteus。
+> **不想用脚本**：见下方[「方式二：手动复制一个文件」](#方式二手动复制一个文件最简单)。
+
+---
+
+## 安装方式二：手动复制一个文件（最简单）
+
+如果你只想下载**一个文件**、手动放一下：
+
+1. 下载汉化文件：[`成品/proteus_zh_CN.qm`](成品/proteus_zh_CN.qm)（点进去后按 **Download / 下载原始文件** 按钮）
+   直链：https://github.com/cddd-yin/Proteus-zh/raw/main/成品/proteus_zh_CN.qm
+2. 把它复制到 **Proteus 安装目录的 `Translations` 文件夹**里，例如：
+
+   ```
+   C:\Program Files (x86)\Labcenter Electronics\Proteus 8 Professional\Translations\
+   ```
+
+   > 复制到 `Program Files` 下时，Windows 会弹「需要管理员权限」→ 点「继续」即可。
+3. 重启 Proteus。
+
+**还原英文**：把 `Translations\proteus_zh_CN.qm` 删掉，重启软件。
+
+---
+
+## 常见问题（FAQ）
+
+**Q：双击 `一键安装汉化.bat` 一闪就没 / 提示找不到 Proteus？**
+A：多半是没找到安装目录。请手动运行脚本并指定路径：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File 工具\安装汉化.ps1 -InstallDir "C:\Program Files (x86)\Labcenter Electronics\Proteus 8 Professional"
+```
+
+把路径换成你自己的 Proteus 安装目录（该目录里应有 `Translations` 与 `BIN` 文件夹）。
+
+**Q：Windows 提示「已保护你的电脑 / SmartScreen」不让运行？**
+A：点 **「更多信息」→「仍要运行」**。脚本是纯文本、可自行打开查看，只做复制文件这一件事。
+
+**Q：装完还是英文？**
+A：① 确认已**完全关闭并重新打开** Proteus；② 确认文件确实在安装目录的 `Translations\` 里（文件名须为 `proteus_zh_CN.qm`）；③ Proteus 按**系统语言**自动选用中文包，若系统不是中文，请在软件内语言设置里选择中文。
+
+**Q：怎么彻底卸载？**
+A：双击 `一键还原英文.bat`（会恢复安装前的备份，或直接删掉汉化文件），重启 Proteus。
+
+**Q：杀毒软件报毒？**
+A：.bat / .ps1 只是复制文件，可能被误报。可右键用记事本打开查看内容，确认无误后放行。
+
+---
+
 ## 特性
 
 - **一份文件、多代通用**：`proteus_zh_CN.qm` 同时兼容 Proteus 8.x（Qt 4.8）与 9.x（Qt 6）——不同代的翻译上下文并存于同一文件，各版本自动命中自己的词条
 - **16,000+ 条翻译**：合并三代来源——2014「风标」经典汉化包（8.x 风格词条）＋ [picdupe/Proteus-Chinese](https://github.com/picdupe/Proteus-Chinese)（MIT，9.x 风格词条）＋ 本项目补充修正
 - **实测验证**：Proteus 8.16 SP3 真机验证（主页 + 原理图工程界面全中文，见 `截图/`）
 - **零依赖工具链**：`工具/` 内为 Python 标准库实现（3.8+），含自研 QM 编译器 `qm_writer.py`，可随时从词库 JSON 重建
-- **可回退**：安装自动备份原文件；`还原英文.cmd` 一键回英文
-
-## 安装
-
-### 方式一：一键脚本（推荐）
-
-1. 右键 `工具/安装汉化.cmd` → **以管理员身份运行**
-2. 重启 Proteus → 中文界面
-
-### 方式二：手动复制
-
-把 `成品/proteus_zh_CN.qm` 复制到 Proteus 安装目录的 `Translations` 文件夹，例如：
-
-```
-C:\Program Files (x86)\Labcenter Electronics\Proteus 8 Professional\Translations\
-```
-
-重启 Proteus 即可。
-
-### 还原英文
-
-运行 `工具/还原英文.cmd`（或手动删除 `Translations\proteus_zh_CN.qm`），重启软件。
+- **可回退**：安装自动备份原文件；`一键还原英文.bat` 一键回英文
 
 ## 原理（一句话版）
 
@@ -49,6 +101,8 @@ Proteus 启动时按系统语言（中文系统 → `zh_CN`）自动加载 `Tran
 ## 目录结构
 
 ```
+一键安装汉化.bat   仓库根目录双击安装（自动提权，推荐）
+一键还原英文.bat   一键还原英文
 成品/         构建好的 proteus_zh_CN.qm（安装用）
 工具/         安装/还原脚本 + 纯 Python 构建链
   qm_writer.py   QM 编译器（无第三方依赖）

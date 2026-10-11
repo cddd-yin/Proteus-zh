@@ -1,0 +1,12 @@
+# 统一换行符处理，保证用户下载 ZIP 后脚本可直接双击运行
+* text=auto
+
+# Windows 脚本/命令：检出为 CRLF（下载 ZIP 与克隆均生效）
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+*.ps1  text eol=crlf
+
+# 二进制文件：禁止任何换行转换，保证字节完全一致
+*.qm   binary
+*.png  binary
+*.pptx binary
